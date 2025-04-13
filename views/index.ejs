@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsAPP clone</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h3>All chats</h3>
+    <% for(chat of chats) { %>
+        <div class="chat">
+            <p>From: <%=chat.from%></p>
+            <div>
+                <p><%=chat.message%></p>
+                <form action="/chats/<%=chat.id%>/edit" method="get">
+                    <button type="submit">edit</button>
+                </form>
+                <form action="/chats/<%=chat.id%>/delete" method="post">
+                    <button >remove</button>
+                </form>
+            </div>
+            <p>To: <%=chat.to%></p>
+            <hr /> 
+            <p><%=chat.created_at.toString().split(" ")[4]%></p>
+            <hr /> 
+        </div>
+        </br>
+    <% } %>
+    <form action="/chats/new" method="get">
+        <button type="submit">New Message</button>
+    </form>
+</body>
+</html>

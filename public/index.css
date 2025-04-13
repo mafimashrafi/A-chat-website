@@ -1,0 +1,12 @@
+body{
+    margin-left: 20px;
+    /* text-align: center; */
+}
+.chat{
+    background-color: rgb(105, 220, 130);
+    width: fit-content;
+    border-radius: 15px;
+    margin-left: 10px;;
+    text-wrap: normal;
+    padding: 10px;
+}
